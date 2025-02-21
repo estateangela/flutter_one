@@ -4,68 +4,42 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text('Homepage'),
-      ),
-      body: HomePage(),
-    ));
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.amber,
+        body: Center(
+          child: Container(
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
+          height: 300,
+          width: 300,
+          padding: EdgeInsets.all(25),
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+            borderRadius: BorderRadius.circular(20),
 
-class _HomePageState extends State<HomePage> {
-  final TextEditingController myController = TextEditingController();
-
-  @override
-  void dispose() {
-    myController.dispose();
-    super.dispose();
-  }
-
-  void btnEvent() {
-    print(myController.text);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'bbbbccc\n1\n2',
-            maxLines: 2,
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.red,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 20), // 添加一些間距
-          Center(child: TextField(
-            controller: myController,
-            decoration: InputDecoration(hintText: '請輸入...')
-          )),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: btnEvent,
-            style: ElevatedButton.styleFrom(
-             backgroundColor: Colors.blue, // 設定背景顏色
-             foregroundColor: Colors.white
-             ),
-            child: Text('印出輸入框內容'),            
           ),
           
-        ],
-      ),
-    );
+          child: Icon(
+            Icons.star,
+            color: Colors.amber,
+            size: 64,
+          )
+
+        )
+        )
+        
+        
+
+        ),
+      );
+
+
+
+    
   }
 }

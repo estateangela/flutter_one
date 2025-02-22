@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/first_pages.dart';
+import 'package:my_app/pages/second_pages.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-  List name = ['a','b','c'];
+  const MyApp({super.key});
+  // List name = ['a','b','c'];
+  void usertap() {
+    print('tapped!');
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('What to drink',style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.blueGrey,
-          leading: Icon(Icons.menu,color: Colors.white,),
+      home: FirstPages(),
+      routes: {
+        '/secondpage':(context)=> SecondPages(),
+
+      }
+        // appBar: AppBar(
+        //   title: Text('What to drink',style: TextStyle(color: Colors.white)),
+        //   backgroundColor: Colors.blueGrey,
+        //   leading: Icon(Icons.menu,color: Colors.white,),
           
-        ),
+        // ),---------------
         // C o l u m n ----
         // body: Column(
         //   children: [
@@ -93,15 +103,23 @@ class MyApp extends StatelessWidget {
         //     ),
         //   ],
         // ), ----------------
+        //gestureDetector 偵測點擊ㄉ東東
+        // body: Center(
+        //   child:GestureDetector(
+        //     onTap: usertap,
+          
+        //   child:Container(
+        //     width: 200,
+        //     height: 200,
+        //     color: Colors.amberAccent[200],
+        //     child: Center(child: Text('Tap tap!'))
+            
+        //   )
+        //   )
+        // ),
         
         
-
-        ),
     );
-      
-
-
-
     
   }
 }

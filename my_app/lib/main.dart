@@ -4,39 +4,101 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  List name = ['a','b','c'];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.amber,
-        body: Center(
-          child: Container(
-
-          height: 300,
-          width: 300,
-          padding: EdgeInsets.all(25),
-          decoration: BoxDecoration(
-            color: Colors.blueAccent,
-            borderRadius: BorderRadius.circular(20),
-
-          ),
+        appBar: AppBar(
+          title: Text('What to drink',style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.blueGrey,
+          leading: Icon(Icons.menu,color: Colors.white,),
           
-          child: Icon(
-            Icons.star,
-            color: Colors.amber,
-            size: 64,
-          )
-
-        )
-        )
+        ),
+        // C o l u m n ----
+        // body: Column(
+        //   children: [
+        //     Expanded(
+        //       child: Container(
+        //       color: const Color.fromARGB(255, 47, 3, 3),
+        //     )),
+        //     Expanded(
+        //       child: Container(
+        //       color: const Color.fromARGB(237, 129, 11, 11),
+        //     )),
+        //     Expanded(child: Container(
+        //       color: const Color.fromARGB(210, 242, 2, 2),
+        //     ))
+            
+        //   ],
+        // )----------
+        // L i s t V i e w 水平/垂直捲軸
+        // body: ListView(
+        //   scrollDirection: Axis.horizontal,
+        //   children: [
+        //     Container(
+        //       width: 200,
+        //       color: Colors.amberAccent,
+        //     ),
+        //     Container(
+        //       width: 200,
+        //       color: const Color.fromARGB(255, 95, 76, 8),
+        //     ),
+        //     Container(
+        //       width: 200,
+        //       color: const Color.fromARGB(255, 64, 147, 255),
+        //     ),
+        //   ],
+        // )------------
+        // L i s t V i e w . b u i l d e r
+        // body: ListView.builder(
+          
+        //   itemCount: name.length,
+        //   itemBuilder:(context, index) => ListTile(
+        //     title: Text(name[index]),
+        //   )
+          
+        //   ), -------------
+        // g r i d
+        //   body: GridView.builder(
+        //     gridDelegate: 
+        //     SliverGridDelegateWithFixedCrossAxisCount
+        //     (crossAxisCount: 4), 
+        //     itemBuilder: (context,index) => Container(
+        //       color: Colors.purple,
+        //       margin: EdgeInsets.all(2), 
+        //     )),
+        // ), --------------------
+        // S t a c k 
+        // body: Stack(
+        //   alignment: Alignment.center,
+        //   children: [
+        //     Container(
+        //       height: 300,
+        //       width: 300,
+        //       color: Colors.amber,
+        //     ),
+        //     Container(
+        //       height: 200,
+        //       width: 200,
+        //       color: Colors.amber[100],
+        //     ),
+        //     Container(
+        //       height: 100,
+        //       width: 100,
+        //       color: Colors.amber[200],
+        //     ),
+        //   ],
+        // ), ----------------
         
         
 
         ),
-      );
+    );
+      
 
 
 

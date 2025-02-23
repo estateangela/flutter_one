@@ -8,40 +8,42 @@ class FirstPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         title: Text('firstpage : What to drink',style: TextStyle(color: Colors.white)),
-         backgroundColor: Colors.blueGrey,
+        title: Text('firstpage : What to drink',
+            style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blueGrey,
         //  leading: Icon(Icons.menu,color: Colors.white,),
       ),
       drawer: Drawer(
         backgroundColor: Colors.blueGrey[100],
-        child: Column(
-          children: [
-            DrawerHeader(
-              child: 
-              Icon(
-                Icons.favorite_rounded,
-                size: 49,               
-                )
-              ),
-                    
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text('H o m e'),
-                onTap: () {
-                  Navigator.pushNamed(context, '/homepage');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('S e t t i n g'),
-                onTap: () {
-                  Navigator.pushNamed(context, '/settingpage');
-                },
-              ),
-          ]
-        ),
-        
+        child: Column(children: [
+          DrawerHeader(
+              child: Icon(
+            Icons.favorite_rounded,
+            size: 49,
+          )),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('H o m e'),
+            iconColor: Colors.white,
+            onTap: () {
+              Navigator.pushNamed(context, '/homepage');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('S e t t i n g'),
+            iconColor: Colors.white,
+            onTap: () {
+              Navigator.pushNamed(context, '/settingpage');
+            },
+          ),
+        ]),
       ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
+      ]),
 
       // body: Center(
       //   child: ElevatedButton(
@@ -55,9 +57,9 @@ class FirstPages extends StatelessWidget {
       //       //-----
       //       // Navigator.pushNamed(context, '/secondpage');
       //     }
-          
+
       //     ),
-        
+
       // ),
     );
   }

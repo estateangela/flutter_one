@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/pages/first_pages.dart';
 import 'package:my_app/pages/home_page.dart';
 import 'package:my_app/pages/setting_page.dart';
+import 'package:my_app/pages/spinner.dart';
 
 
 void main() {
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
         '/firstpage':(context)=> FirstPages(),
         '/homepage':(context)=> HomePage(),
         '/settingpage':(context)=> SettingPage(),
+        '/drinkWheelApp' : (context) => DrinkWheelApp(),
+      }
+      );
 
       }
         // appBar: AppBar(
@@ -123,7 +127,7 @@ class MyApp extends StatelessWidget {
         // ),
         
         
-    );
+    
     
   }
-}
+

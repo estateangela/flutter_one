@@ -37,6 +37,14 @@ class FirstPages extends StatelessWidget {
               Navigator.pushNamed(context, '/settingpage');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.local_drink),
+            title: Text('S p i n n e r'),
+            iconColor: Colors.white,
+            onTap: () {
+              Navigator.pushNamed(context, '/drinkWheelApp');
+            },
+          ),
         ]),
       ),
       bottomNavigationBar: BottomNavigationBar(items: [

@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/pages/home_page.dart';
+import 'package:my_app/pages/profile_page.dart';
+import 'package:my_app/pages/setting_page.dart';
 
 class FirstPages extends StatelessWidget {
-  const FirstPages({super.key});
+  FirstPages({super.key});
+
+  final List _pages = [
+    //homepage
+    HomePage(),
+
+    //profile page
+    ProfilePage(),
+
+    //setting page
+    SettingPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('firstpage : What to drink',
-            style: TextStyle(color: Colors.white)),
+        title: Text('firstpage', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blueGrey,
         //  leading: Icon(Icons.menu,color: Colors.white,),
       ),
+      body: _pages[1],
       drawer: Drawer(
         backgroundColor: Colors.blueGrey[100],
         child: Column(children: [

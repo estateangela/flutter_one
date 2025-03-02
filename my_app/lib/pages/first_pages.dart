@@ -3,8 +3,21 @@ import 'package:my_app/pages/home_page.dart';
 import 'package:my_app/pages/profile_page.dart';
 import 'package:my_app/pages/setting_page.dart';
 
-class FirstPages extends StatelessWidget {
+class FirstPages extends StatefulWidget {
   FirstPages({super.key});
+
+  @override
+  State<FirstPages> createState() => _FirstPagesState();
+}
+
+class _FirstPagesState extends State<FirstPages> {
+  int _selectedIndex = 0;
+
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   final List _pages = [
     //homepage
@@ -25,7 +38,7 @@ class FirstPages extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         //  leading: Icon(Icons.menu,color: Colors.white,),
       ),
-      body: _pages[1],
+      body: _pages[_selectedIndex],
       drawer: Drawer(
         backgroundColor: Colors.blueGrey[100],
         child: Column(children: [
@@ -60,11 +73,15 @@ class FirstPages extends StatelessWidget {
           ),
         ]),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _navigateBottomBar,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: 'Setting'),
+          ]),
 
       // body: Center(
       //   child: ElevatedButton(
